@@ -1,0 +1,1 @@
+export const SHOPPIN_URL = "https://shoppinapi-dot-shoppin-283920.appspot.com";
