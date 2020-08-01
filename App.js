@@ -24,12 +24,24 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const AuthNaivgator = createStackNavigator();
+
 import { LoginPage } from './pages/LoginPage.js';
+import { DefaultPage } from './pages/DefaultPage.js';
 
 const App: () => React$Node = () => {
   return (
     <>
-      <LoginPage/>
+      <NavigationContainer>
+        <AuthNaivgator.Navigator>
+          <AuthNaivgator.Screen name="Default" component={DefaultPage}/>
+          <AuthNaivgator.Screen name="Login" component={LoginPage} />
+        </AuthNaivgator.Navigator>
+      </NavigationContainer>
     </>
   );
 };
